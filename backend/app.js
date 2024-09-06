@@ -34,6 +34,7 @@ const corsOptions = {
           'http://127.0.0.1:3000',
         ]
       : 'https://feastify.onrender.com',
+      // : 'http://localhost:4173',
   credentials: true, // Allow cookies to be included in requests
   methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], // Specify allowed methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
@@ -68,13 +69,13 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-if (process.env.NODE_ENV === 'production') {
-  console.log("**********************")
-  app.use(express.static(path.join(__dirname, '../frontend/dist')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../frontend', 'dist', 'index.html'));
-  });
-}
+// if (process.env.NODE_ENV === 'production') {
+//   console.log("**********************")
+//   app.use(express.static(path.join(__dirname, '../frontend/dist')));
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, '../frontend', 'dist', 'index.html'));
+//   });
+// }
 
 // Limit requests from same API
 const limiter = rateLimit({
