@@ -33,7 +33,7 @@ const corsOptions = {
           'http://localhost:4173',
           'http://127.0.0.1:3000',
         ]
-      : 'https://feastify.onrender.com',
+      : 'https://feastifyv2.netlify.app',
   credentials: true, // Allow cookies to be included in requests
   methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], // Specify allowed methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
@@ -112,6 +112,7 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 app.use('/api/v1/recipes', recipeRouter);
+
 
 if (process.env.NODE_ENV === 'production') {
   console.log("**********************")
