@@ -33,7 +33,7 @@ const corsOptions = {
           'http://localhost:4173',
           'http://127.0.0.1:3000',
         ]
-      : 'https://vercel-metinku-front.vercel.app',
+      : 'https://feastify.onrender.com',
   credentials: true, // Allow cookies to be included in requests
   methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], // Specify allowed methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
