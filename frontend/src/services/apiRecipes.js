@@ -4,7 +4,7 @@ export async function getRecipes({ filter }) {
   }
 
   try {
-    const endpoint = `http://127.0.0.1:3000/api/v1/recipes?title=*${filter}*`;
+    const endpoint = `${import.meta.env.VITE_API_BASE_URL}/api/v1/recipes?title=*${filter}*`;
 
     const response = await fetch(endpoint);
     if (!response.ok) {
@@ -20,7 +20,7 @@ export async function getRecipes({ filter }) {
 
 export async function getRecipe({ id }) {
   try {
-    const endpoint = `http://127.0.0.1:3000/api/v1/recipes/${id}`;
+    const endpoint = `${import.meta.env.VITE_API_BASE_URL}/api/v1/recipes/${id}`;
 
     const response = await fetch(endpoint);
     if (!response.ok) {
@@ -37,7 +37,7 @@ export async function getRecipe({ id }) {
 
 export async function createRecipe(recipe) {
   try {
-    const endpoint = 'http://127.0.0.1:3000/api/v1/recipes';
+    const endpoint = '${import.meta.env.VITE_API_BASE_URL}/api/v1/recipes';
 
     const response = await fetch(endpoint, {
       method: 'POST',
