@@ -37,7 +37,7 @@ export async function getRecipe({ id }) {
 
 export async function createRecipe(recipe) {
   try {
-    const endpoint = '${import.meta.env.VITE_API_BASE_URL}/api/v1/recipes';
+    const endpoint = `${import.meta.env.VITE_API_BASE_URL}/api/v1/recipes`;
 
     const response = await fetch(endpoint, {
       method: 'POST',
